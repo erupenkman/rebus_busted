@@ -1,11 +1,7 @@
 <html>
 	<head>
 		<link  rel="stylesheet"href="style.css" type="text/css"/>
-		<script type="text/javascript" src="js/rebus.js"/>
-	</head>
-	<body>
-		
-		<div class="wrap">
+		<script id="view-tpl" type="text/template">
 			<div class="image">
 				<img src="img/easy/7seas.png"/>
 			</div>
@@ -13,8 +9,25 @@
 				<input type="text" placeholder="Your Answer"/>
 				<input type="button" value="Check"/>
 			</div>
+		</script>
+	</head>
+	<body>
+		
+		<div id="primary-content" class="wrap">
+		
 		</div>
 		
+	<script language="javascript" type="text/javascript" src="js/lib/jquery-1.8.0.min.js"></script> 
+	<script language="javascript" type="text/javascript" src="js/lib/mustache.js"></script> 
+	<script language="javascript" type="text/javascript" src="js/lib/underscore.min.js"></script> 
+	<script language="javascript" type="text/javascript" src="js/lib/backbone-min.js"></script> 
+	<script language="javascript" type="text/javascript" src="js/lib/bootstrap.min.js"></script> 
+
+	<script language="javascript" type="text/javascript" src="js/rebus-router.js"></script> 
+	<script language="javascript" type="text/javascript" src="js/models/rebus-model.js"></script> 
+	<script language="javascript" type="text/javascript" src="js/views/rebus-view.js"></script> 
+
+	
 	<script language="javascript" type="text/javascript" >
 		/*go backbone go*/
 		var router = new APP.Routers.RebusRouter();
