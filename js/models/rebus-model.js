@@ -6,7 +6,7 @@
 
   window.APP = APP || {Routers: {}, Collections: {}, Models: {}, Views: {}};
   APP.Models.RebusModel = Backbone.Model.extend({
-	url:"/allRebus", 
+	url:"/rebuses", 
     // the default fields
     defaults: {
       name: "Untitled",
@@ -21,7 +21,7 @@
   window.APP.Collections = window.APP.Collections || {};
   window.APP.Collections.RebusCollection = Backbone.Collection.extend({
     // Reference to this collection's model.
-	url:"/items",
+	url:"/rebuses",
     model: APP.Models.RebusModel
   });
 }());
