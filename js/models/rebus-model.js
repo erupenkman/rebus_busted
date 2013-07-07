@@ -9,8 +9,7 @@
 	url:"/rebuses", 
     // the default fields
     defaults: {
-      name: "Untitled",
-      detail: ["Phone", ""],
+      imgSrc: "404"
     },
     // the constructor
     initialize: function (options) {

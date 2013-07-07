@@ -7,22 +7,18 @@
   window.APP = window.APP || {Routers: {}, Collections: {}, Models: {}, Views: {}};
   APP.Routers.RebusRouter = Backbone.Router.extend({
     routes: {
-		"rebus/:id": "view",
-		"*path": "view" //default
+		"rebus/:id": "view"
     },
 
     initialize: function (options) {
 		this.allRebus =  new APP.Collections.RebusCollection();
 		this.allRebus.fetch({success: (function(){
 			Backbone.history.start();
-			this.list = new APP.Views.RebusListView({allRebus: this.allRebus});
-			this.list.render();
 		}).bind(this)});
     },
-
     view: function (id) {
-		var rebus = this.allRebus.get(id);
-		this.currentView = new APP.Views.RebusView({rebus: new APP.Models.RebusModel()});
+		var currentRebus = this.allRebus.get(id);
+		this.currentView = new APP.Views.RebusView({rebus: currentRebus});
 		$('#primary-content').html(this.currentView.render().el);
     }
 	

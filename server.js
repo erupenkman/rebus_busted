@@ -41,7 +41,10 @@ app.get('/rebuses/:dbId', function(req, res){
 });
 
 app.get('/rebuses', function(req, res){
-	res.send('all rebus json');
+	var rebus1= [{'imgSrc':'img/easy/7seas.png', 'id':1}];
+	
+
+	res.send(JSON.stringify(rebus1));
 });
 
 
