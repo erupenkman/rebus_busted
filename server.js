@@ -35,7 +35,6 @@ app.get('/', function(req, res){
 	res.render('index.html');
 });
 
-
 app.get('/rebuses/:dbId', function(req, res){
 	res.send('the rebus with id of: '+ dbId);
 });
@@ -45,6 +44,15 @@ app.get('/rebuses', function(req, res){
 	
 
 	res.send(JSON.stringify(rebus1));
+});
+
+app.put('/rebuses', function(req, res){
+	//check answer
+	var correct= false;
+	if(req.body.guese == "seven seas"){
+		correct = true;
+	}
+	res.send(JSON.stringify(correct));
 });
 
 

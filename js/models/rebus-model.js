@@ -9,7 +9,8 @@
 	url:"/rebuses", 
     // the default fields
     defaults: {
-      imgSrc: "404"
+      imgSrc: "",
+	  guese: ""
     },
     // the constructor
     initialize: function (options) {

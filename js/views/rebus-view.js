@@ -7,7 +7,7 @@
   APP.Views.RebusView = Backbone.View.extend({
     // functions to fire on events
     events: {
-      "click #save-button": "save"
+      "click #check-answer": "checkAnswer"
     },
 
     // the constructor
@@ -15,16 +15,13 @@
       this.rebus  = options.rebus;
     },
 	
-	save: function (event) {
+	checkAnswer: function (event) {
       event.stopPropagation();
       event.preventDefault();
 	  
-		var allValues = [];
-	  $('#details input').each(function() { allValues.push($(this).val()) })
       // update our model with values from the form
       this.rebus.set({
-        name: $('#name').val(),
-        detail: allValues
+        guese: $('#guese').val()
       });
       // we would save to the server here with 
       this.rebus.save();
