@@ -7,7 +7,8 @@
   window.APP = window.APP || {Routers: {}, Collections: {}, Models: {}, Views: {}};
   APP.Routers.RebusRouter = Backbone.Router.extend({
     routes: {
-		"rebus/:id": "view"
+		'rebus/:id': 'view',
+		'*path' : 'index'
     },
 
     initialize: function (options) {
@@ -20,7 +21,10 @@
 		var currentRebus = this.allRebus.get(id);
 		this.currentView = new APP.Views.RebusView({rebus: currentRebus});
 		$('#rebus-content').html(this.currentView.render().el);
-    }
+    },
+	index: function(){
+		this.view(1);
+	}
 	
   });
 }());
