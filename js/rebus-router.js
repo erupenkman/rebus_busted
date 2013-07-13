@@ -19,7 +19,7 @@
     view: function (id) {
 		var currentRebus = this.allRebus.get(id);
 		this.currentView = new APP.Views.RebusView({rebus: currentRebus});
-		$('#primary-content').html(this.currentView.render().el);
+		$('#rebus-content').html(this.currentView.render().el);
     }
 	
   });

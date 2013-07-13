@@ -6,11 +6,13 @@
 		<link href="style.css" rel="stylesheet" media="screen"/>
 		
 		
-		<script id="view-tpl" type="text/template">
+		<script id="view-tpl" type="text/template"><!-- 
+		</ this makes notepad++ highlight the template :)-->
 			
-			<div class="image">
-				<img src="{{imgSrc}}"/>
-			</div>
+					<div class="image">
+						<img src="{{imgSrc}}"/>
+					</div>
+				</div>
 		</script>
 	</head>
 	<body>
@@ -18,16 +20,42 @@
 			<div class="navbar-inner">
 			</div>
 		</div>
-		<div class="container pagination-centered">
-						<div id="primary-content">
-							
+		
+		<div class="container ">
+			<div class="row">
+				<div class="span10"></div>
+				<div class="span1">Round 1</div>
+				<div class="span1">Worth 20 points</div>
+			</div>
+			
+			<div class="row">
+				<div class="span5">
+					<div id="rebus-content"></div>
+				</div>
+				<div class="span7">
+					<form class="well form-inline">
+						<div class="control-group">
+							<input id="guese" class="span3" type="text" placeholder="Your Answer" />
+							<a id="check-answer" class="btn btn-primary " href="#">Check</a>
 						</div>
-			<form class="well form-inline">
-						<input id="guese" class="span3" type="text" placeholder="Your Answer" />
-						<a id="check-answer" class="btn btn-primary " href="#">Check</a>
-						
-			</form>
+					</form>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="span2"><button class="btn">Hint</button></div>
+				<div class="span2"><button class="btn">Show a letter</button></div>
+				<div class="span2"><button class="btn">Reveal Answer</button></div>
+				<div class="span2"><button class="btn">Skip Level</button></div>
+				<div class="span2"></div>
+				<div class="span1">Level 0</div>
+				<div class="span1">Score: $50</div>
+				
+			</div>
+			
+			
 		</div>
+		
 		<script language="javascript" type="text/javascript" src="js/lib/jquery-1.8.0.min.js"></script> 
 		<script language="javascript" type="text/javascript" src="js/lib/mustache.js"></script> 
 		<script language="javascript" type="text/javascript" src="js/lib/underscore.min.js"></script> 

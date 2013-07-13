@@ -24,7 +24,11 @@
         guese: $('#guese').val()
       });
       // we would save to the server here with 
-      this.rebus.save();
+      this.rebus.save({}, {
+			error: function(model, errors){
+				console.log(e);
+			}
+	  });
       // redirect back to the index
     },
 

@@ -1,0 +1,3 @@
+nssm install supervisor "C:\dev\nodejs\node.exe" C:\dev\supervisor\lib\cli-wrapper.js --debug --watch C:\wamp\www\rebus-busted C:\wamp\www\rebus-busted\server.js
+
+nssm install node-inspector "C:\dev\nodejs\node.exe" C:\Users\user\AppData\Roaming\npm\node_modules\node-inspector\bin\inspector.js

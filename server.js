@@ -48,11 +48,13 @@ app.get('/rebuses', function(req, res){
 
 app.put('/rebuses', function(req, res){
 	//check answer
-	var correct= false;
 	if(req.body.guese == "seven seas"){
 		correct = true;
+		res.send(200,JSON.stringify({'correct':true}));
 	}
-	res.send(JSON.stringify(correct));
+	else{
+		res.send(400, JSON.stringify({'correct':false}));
+	}
 });
 
 
