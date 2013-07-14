@@ -9,10 +9,22 @@
 		<script id="view-tpl" type="text/template"><!-- 
 		</ this makes notepad++ highlight the template :)-->
 			
-					<div class="image">
-						<img src="{{imgSrc}}"/>
-					</div>
-				</div>
+			<div class="image">
+				<img src="{{imgSrc}}"/>
+			</div>
+		</script>
+		
+		<script id="guese-tpl" type="text/template"><!-- 
+		</ -->
+			<div class="control-group">
+				<input id="guese" class="span3" type="text" placeholder="Your Answer" />
+				<a id="check-answer" class="btn btn-primary " href="#">Check</a>
+			</div>
+		</script>
+		
+		<script id="score-tpl" type="text/template"><!-- 
+			</ -->
+			Score: <strong>${{score}}</strong>
 		</script>
 	</head>
 	<body>
@@ -33,11 +45,8 @@
 					<div id="rebus-content"></div>
 				</div>
 				<div class="span7">
-					<form class="well form-inline">
-						<div class="control-group">
-							<input id="guese" class="span3" type="text" placeholder="Your Answer" />
-							<a id="check-answer" class="btn btn-primary " href="#">Check</a>
-						</div>
+					<form id="guese-content" class="well form-inline">
+						
 					</form>
 				</div>
 			</div>
@@ -49,25 +58,27 @@
 				<div class="span2"><button class="btn">Skip Level</button></div>
 				<div class="span2"></div>
 				<div class="span1">Level 0</div>
-				<div class="span1">Score: $50</div>
+				<div class="span1"  id="score-content"></div>
 				
 			</div>
 			
 			
 		</div>
 		
-		<script language="javascript" type="text/javascript" src="js/lib/jquery-1.8.0.min.js"></script> 
-		<script language="javascript" type="text/javascript" src="js/lib/mustache.js"></script> 
-		<script language="javascript" type="text/javascript" src="js/lib/underscore.min.js"></script> 
-		<script language="javascript" type="text/javascript" src="js/lib/backbone-min.js"></script> 
-		<script language="javascript" type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script> 
-
-		<script language="javascript" type="text/javascript" src="js/rebus-router.js"></script> 
-		<script language="javascript" type="text/javascript" src="js/models/rebus-model.js"></script> 
-		<script language="javascript" type="text/javascript" src="js/views/rebus-view.js"></script> 
-
+		<script type="text/javascript" src="js/lib/jquery-1.8.0.min.js"></script> 
+		<script type="text/javascript" src="js/lib/mustache.js"></script> 
+		<script type="text/javascript" src="js/lib/underscore.min.js"></script> 
+		<script type="text/javascript" src="js/lib/backbone-min.js"></script> 
+		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script> 
+		<!-- router then models then views-->
+		<script type="text/javascript" src="js/rebus-router.js"></script> 
+		<script type="text/javascript" src="js/models/rebus-model.js"></script> 
+		<script type="text/javascript" src="js/models/game-model.js"></script> 
+		<script type="text/javascript" src="js/views/rebus-view.js"></script> 
+		<script type="text/javascript" src="js/views/guese-view.js"></script> 
+		<script type="text/javascript" src="js/views/score-view.js"></script> 
 		
-		<script language="javascript" type="text/javascript" >
+		<script type="text/javascript" >
 			/*go backbone go*/
 			var router = new APP.Routers.RebusRouter();
 		</script>

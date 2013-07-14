@@ -46,14 +46,13 @@ app.get('/rebuses', function(req, res){
 	res.send(JSON.stringify(rebus1));
 });
 
-app.put('/rebuses', function(req, res){
+app.post('/games', function(req, res){
 	//check answer
 	if(req.body.guese == "seven seas"){
-		correct = true;
-		res.send(200,JSON.stringify({'correct':true}));
+		res.send(JSON.stringify({'correct':true, 'score':60}));
 	}
 	else{
-		res.send(400, JSON.stringify({'correct':false}));
+		res.send( JSON.stringify({'correct':false, 'score':49}));
 	}
 });
 

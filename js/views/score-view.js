@@ -4,20 +4,16 @@
 (function () {
   "use strict";
   window.APP || {Routers: {}, Collections: {}, Models: {}, Views: {}};
-  APP.Views.RebusView = Backbone.View.extend({
-    // functions to fire on events
+  APP.Views.ScoreView = Backbone.View.extend({
     events: {
-	
     },
-
-    // the constructor
     initialize: function (options) {
-      this.rebus  = options.rebus;
+      this.game = options.game;
+      this.listenTo(this.game, 'change', this.render);
     },
-
     // populate the html to the dom
     render: function () {
-      this.$el.html(Mustache.to_html($('#view-tpl').html(), this.rebus.toJSON()));
+      this.$el.html(Mustache.to_html($('#score-tpl').html(), this.game.toJSON()));
       return this;
     }
   });
