@@ -5,18 +5,26 @@
   "use strict";
 
   window.APP = APP || {Routers: {}, Collections: {}, Models: {}, Views: {}};
-  APP.Models.GameModel = Backbone.Model.extend({
+  APP.Models.GameModel = Backbone.RelationalModel.extend({
 	url:"/games", 
     // the default fields
     defaults: {
       score: 50,
-	  guese: ""
+	  _id: 1,
     },
+	relations: [{
+		type: Backbone.HasOne,
+		key: 'currentLevel',
+		relatedModel: 'APP.Models.RebusModel',
+		reverseRelation: {
+			type: Backbone.HasOne,
+			key: 'game',
+			includeInJSON: '_id',
+		},
+	}],
     // the constructor
     initialize: function (options) {
-		//this.score=options.score;
-		//this.guese = options.guese;
-    }
+    },
   });
   
   // define the collection in the same file

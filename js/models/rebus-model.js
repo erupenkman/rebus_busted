@@ -5,13 +5,23 @@
   "use strict";
 
   window.APP = APP || {Routers: {}, Collections: {}, Models: {}, Views: {}};
-  APP.Models.RebusModel = Backbone.Model.extend({
+  APP.Models.RebusModel = Backbone.RelationalModel.extend({
 	url:"/rebuses", 
     // the default fields
     defaults: {
       imgSrc: "",
-	  guese: ""
+	  _id: 1,
     },
+	relations: [{
+		type: Backbone.HasOne,
+		key: 'latestGuese',
+		relatedModel: 'APP.Models.GueseModel',
+		reverseRelation: {
+			type: Backbone.HasOne,
+			key: 'rebus',
+			includeInJSON: '_id',
+		},
+	}],
     // the constructor
     initialize: function (options) {
     }

@@ -47,8 +47,15 @@ app.get('/rebuses', function(req, res){
 });
 
 app.post('/games', function(req, res){
+
+	console.log('games', req.body);
+});
+
+app.post('/guese', function(req,res){
 	//check answer
-	if(req.body.guese == "seven seas"){
+	console.log('/guese', req.body);
+	var newGuese = req.body;
+	if( newGuese.rebus == 1 && newGuese.guese == "seven seas"){
 		res.send(JSON.stringify({'correct':true, 'score':60}));
 	}
 	else{

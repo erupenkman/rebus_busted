@@ -19,13 +19,14 @@
     },
     view: function (id) {
 		var currentRebus = this.allRebus.get(id);
-		var game =  new APP.Models.GameModel();
-		
-		this.currentView = new APP.Views.RebusView({rebus: currentRebus});
+		var game =  new APP.Models.GameModel({
+			currentLevel: currentRebus,
+		});
+		this.rebusView = new APP.Views.RebusView({rebus: currentRebus,})
 		this.gueseView = new APP.Views.GueseView({game: game});
 		this.scoreView = new APP.Views.ScoreView({game: game});
 		
-		$('#rebus-content').html(this.currentView.render().el);
+		$('#rebus-content').html(this.rebusView.render().el);
 		$('#guese-content').html(this.gueseView.render().el);
 		$('#score-content').html(this.scoreView.render().el);
     },

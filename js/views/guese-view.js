@@ -16,20 +16,20 @@
     },
 	
 	checkAnswer: function (event) {
-      event.stopPropagation();
-      event.preventDefault();
-	  
-      // update our model with values from the form
-      this.game.set({
-        guese: $('#guese').val()
-      });
-      // we would save to the server here with 
-	  var self= this;
-      this.game.save({}, {
-			success: function(model, response){
-				self.game.set({score : response.score});
-			}
-	  });
+	event.stopPropagation();
+	event.preventDefault();
+	
+	var newGuese = new APP.Models.GueseModel({
+		rebus: this.game.getRelation('currentLevel'),
+		guese: $('#guese').val(),
+	});
+	// update our model with values from the form
+	var self= this;
+	newGuese.save({}, {
+		success: function(model, response){
+			self.game.set({score : response.score});
+		}
+	});
       // redirect back to the index
     },
 
